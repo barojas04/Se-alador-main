@@ -1,4 +1,4 @@
-// Web Component: ucr-bienvenida
+
 const templateBienvenida = document.createElement('template');
 templateBienvenida.innerHTML = `
 <style>
@@ -31,7 +31,7 @@ class UcrBienvenida extends HTMLElement {
 customElements.define('ucr-bienvenida', UcrBienvenida);
 
 
-// Web Component: ucr-tarjeta-campana
+
 const templateCampana = document.createElement('template');
 templateCampana.innerHTML = `
 <style>
@@ -80,7 +80,7 @@ class UcrTarjetaCampana extends HTMLElement {
 customElements.define('ucr-tarjeta-campana', UcrTarjetaCampana);
 
 
-// Web Component: ucr-letrero
+
 const templateLetrero = document.createElement('template');
 templateLetrero.innerHTML = `
 <style>
