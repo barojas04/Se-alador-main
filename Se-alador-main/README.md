@@ -1,6 +1,6 @@
 ## Componentes y Slots
 
-Usé _slots_ para poder meter contenido al componente desde el HTML principal sin tener que tocar el JavaScript. Aquí explico rápido cómo se usa cada uno:
+Usé _slots_ para poder meter contenido al componente desde el HTML principal sin tener que tocar el JavaScript.
 
 ### 1. Pantalla de Bienvenida (`<ucr-bienvenida>`)
 
@@ -41,7 +41,7 @@ ucr-letrero {
 
 ### CSS Parts
 
-Sirven para darle estilos específicos a una pieza de adentro del componente desde el CSS normal. Son súper útiles para meterle efectos de _hover_, por ejemplo:
+Sirven para darle estilos específicos a una pieza de adentro del componente desde el CSS normal.
 
 ```css
 ucr-tarjeta-campana::part(tarjeta):hover {
