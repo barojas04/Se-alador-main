@@ -1,0 +1,79 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+body { background-color: #2c3e50; color: #333; }
+
+.contenedor-scroll { height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+.pantalla { height: 100vh; width: 100%; scroll-snap-align: start; display: flex; justify-content: center; align-items: center; padding: 20px; }
+
+/* Bienvenida Light DOM Styles */
+.bienvenida { background: linear-gradient(135deg, #004a99, #00bef2); color: white; text-align: center; }
+.logo-ucr-grande { font-size: 5rem; font-weight: 900; letter-spacing: 5px; margin-bottom: 10px; }
+.indicador-scroll { margin-top: 50px; animation: flotar 2s ease-in-out infinite; }
+@keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(15px); } }
+
+/* Campaña Light DOM Styles */
+.banner-campana { background-color: #f4f4f9; }
+.titulo-campana-grafico { display: flex; flex-direction: column; align-items: center; gap: 5px; margin-bottom: 20px; }
+.bloque-arriba { font-size: 1.3rem; font-weight: 700; color: #004a99; }
+.bloque-abajo { font-size: 2.3rem; font-weight: 900; line-height: 1; display: flex; align-items: center; gap: 5px; }
+.signo { color: #d35400; font-size: 3rem; animation: exclamacion 1s infinite alternate; }
+.exclamacion-abrir { transform: rotate(-5deg); }
+.exclamacion-cerrar { transform: rotate(5deg); }
+@keyframes exclamacion { from { opacity: 0.8; transform: scale(1) rotate(5deg); } to { opacity: 1; transform: scale(1.1) rotate(-5deg); } }
+.palabra-te { color: #333; }
+.palabra-acompana { color: #d35400; text-transform: uppercase; letter-spacing: -1px; }
+.lema { font-size: 1rem; color: #444; margin-bottom: 25px; }
+.lema strong { color: #d35400; font-weight: 700; }
+.futbol-no-acosar { background: white; border-radius: 10px; padding: 15px; border: 1px solid #ddd; margin-bottom: 25px; text-align: center; }
+.banner-futbol { color: #004a99; font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; }
+.img-stars-real { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: block; margin: 0 auto; }
+.zona-qr-css { font-size: 0.8rem; color: #888; }
+.qr-css-code { width: 60px; height: 60px; background: white; border: 3px dashed #333; display: flex; justify-content: center; align-items: center; position: relative; margin: 0 auto 10px; }
+.pattern { width: 40px; height: 40px; background: linear-gradient(90deg, #333 5px, transparent 1px) repeat-x 0 0, linear-gradient(#333 5px, transparent 1px) repeat-y 0 0; background-size: 6px 6px; position: absolute; top: 5px; left: 5px; }
+.qr-label { font-weight: bold; color: #444; margin-bottom: 3px; }
+
+/* Letrero Light DOM Styles */
+.paisaje-fondo { position: relative; background: linear-gradient(to bottom, #74ebd5 0%, #9face6 100%); overflow: hidden; }
+.montanas { position: absolute; bottom: 0; left: 0; width: 100%; height: 35vh; background: #2b7a0b; clip-path: polygon(0% 100%, 0% 60%, 15% 30%, 35% 70%, 55% 20%, 80% 65%, 100% 40%, 100% 100%); z-index: 1; }
+.nubes-container { position: absolute; top: 5%; width: 100%; height: 100%; z-index: 0; }
+.nube { position: absolute; color: white; opacity: 0.6; font-size: 5rem; animation: volarNubes linear infinite; filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.1)); }
+.nube-1 { top: 10%; left: -20%; animation-duration: 40s; font-size: 4rem; }
+.nube-2 { top: 25%; left: -10%; animation-duration: 55s; font-size: 6rem; }
+.nube-3 { top: 5%;  left: -30%; animation-duration: 35s; font-size: 5rem; }
+.nube-4 { top: 35%; left: -40%; animation-duration: 60s; font-size: 4rem; opacity: 0.4;}
+@keyframes volarNubes { from { transform: translateX(-10vw); } to { transform: translateX(110vw); } }
+
+.direccion-item-letrero { display: flex; justify-content: space-between; align-items: center; padding: 18px 10px; text-decoration: none; color: #ffffff; border-bottom: 2px solid #ffffff; font-size: 1.1rem; font-weight: 600; transition: all 0.3s ease; }
+.direccion-item-letrero:last-child { border-bottom: none; }
+.flecha { color: #ffffff; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s ease; }
+.direccion-item-letrero:hover { background-color: rgba(255, 255, 255, 0.15); padding-left: 20px; }
+.direccion-item-letrero:hover .flecha { transform: translateX(8px); }
+
+/* --- USO DE VARIABLES CSS Y CSS PARTS PARA ESTILIZAR LOS COMPONENTES --- */
+
+ucr-tarjeta-campana {
+    /* Usando las variables CSS definidas en el Shadow DOM del componente */
+    --bg-tarjeta: #ffd966;
+    --color-borde-tarjeta: #f39c12;
+    --radius-tarjeta: 25px;
+}
+
+ucr-tarjeta-campana::part(tarjeta) {
+    /* Estilizando directamente el contenedor mediante ::part */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ucr-tarjeta-campana::part(tarjeta):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+ucr-letrero {
+    /* Usando variables CSS para cambiar el diseño del letrero */
+    --color-fondo-panel: #004a99;
+    --color-borde-panel: #002d5e;
+}
+
+ucr-letrero::part(logo) {
+    /* Ejemplo de cómo apuntar a una parte interna del letrero */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}

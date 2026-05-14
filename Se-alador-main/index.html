@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCR | Recorrido Virtual Sede Guanacaste</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/components.js"></script>
+</head>
+<body>
+
+    <main class="contenedor-scroll">
+        
+        <section class="pantalla bienvenida">
+            <ucr-bienvenida>
+                <div slot="titulares">
+                    <h1 class="logo-ucr-grande">UCR</h1>
+                    <h2>Recorrido Virtual</h2>
+                    <p>Sede de Guanacaste</p>
+                </div>
+                <div slot="indicador" class="indicador-scroll">
+                    <p>Desliza hacia abajo</p>
+                    <span class="flecha-abajo">↓</span>
+                </div>
+            </ucr-bienvenida>
+        </section>
+
+        <section class="pantalla banner-campana">
+            <ucr-tarjeta-campana>
+                <span slot="icono">📢</span>
+                
+                <div slot="contenido">
+                    <h2 class="titulo-campana-grafico">
+                        <span class="bloque-arriba">
+                            <span class="palabra-la">LA</span>
+                            <span class="palabra-sede">SEDE</span>
+                        </span>
+                        <span class="bloque-abajo">
+                            <span class="signo exclamacion-abrir">¡</span>
+                            <span class="palabra-te">TE</span>
+                            <span class="palabra-acompana">ACOMPAÑA</span>
+                            <span class="signo exclamacion-cerrar">!</span>
+                        </span>
+                    </h2>
+                    
+                    <p class="lema">
+                        El respeto no se negocia<br>
+                        <strong>¡Pará ya de acosar!</strong>
+                    </p>
+
+                    <div class="futbol-no-acosar">
+                        <img src="imagenes/messi-ronaldo.png" alt="Messi y Ronaldo contra el acoso" class="img-stars-real">
+                    </div>
+
+                    <div class="zona-qr-css">
+                        <div class="qr-css-code">
+                            <div class="pattern"></div>
+                            <div class="pattern"></div>
+                            <div class="pattern"></div>
+                            <div class="pattern"></div>
+                        </div>
+                        <p class="qr-label">QR </p>
+                        <p>Escanéalo para mas info</p>
+                    </div>
+                </div>
+            </ucr-tarjeta-campana>
+        </section>
+
+        <section class="pantalla banner-senaletica paisaje-fondo">
+            
+            <div class="nubes-container">
+                <div class="nube nube-1">☁️</div>
+                <div class="nube nube-2">☁️</div>
+                <div class="nube nube-3">☁️</div>
+                <div class="nube nube-4">☁️</div>
+            </div>
+            
+            <div class="montanas"></div>
+
+            <ucr-letrero>
+                <a href="#" class="direccion-item-letrero">
+                    <span class="texto">Aulas 5, 6, 7</span>
+                    <span class="flecha">→</span>
+                </a>
+                <a href="#" class="direccion-item-letrero">
+                    <span class="texto">Apoyo Informático</span>
+                    <span class="flecha">→</span>
+                </a>
+                <a href="#" class="direccion-item-letrero">
+                    <span class="texto">Servidores</span>
+                    <span class="flecha">→</span>
+                </a>
+                <a href="#" class="direccion-item-letrero">
+                    <span class="texto">Laboratorio 1 y 2</span>
+                    <span class="flecha">→</span>
+                </a>
+                <a href="#" class="direccion-item-letrero">
+                    <span class="texto">Coordinación Informática Empresarial</span>
+                    <span class="flecha">→</span>
+                </a>
+                
+                <span slot="logo">UCR</span>
+            </ucr-letrero>
+            
+        </section>
+
+    </main>
+
+</body>
+</html>
